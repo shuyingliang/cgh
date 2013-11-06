@@ -5,7 +5,9 @@
   - make
   - ./eval_sets ./primes-db/primes10000000.txt 1000 5000 10000 50 50 50
 
-## Usage: eval_sets prime-number-file times-of-operations set-size universe-size contains-true-ratio includes-true-ratio equals-true-ratio [latex-output]
+## Usage:
+
+`eval_sets prime-number-file times-of-operations set-size universe-size contains-true-ratio includes-true-ratio equals-true-ratio [latex-output]`
 
 This program runs each operations 'times-of-operations' times on sets containing 'set-size' elements randomly fetched from the 'universe-size' prime space.
 
@@ -21,10 +23,11 @@ This program runs each operations 'times-of-operations' times on sets containing
   - Sorted Treeset: using std::set, which is a red-black tree based set implementation.
   - Hashset: using std::unordered_set, which is a bucket-based hashset.
 
-Output:
+## Output:
   Times show are in nanoseconds for each single operation.
-
-Explaination:
+  We also show the slow down ration of the run time for traditional data streuctures relative to Godel hashing sets.
+  
+## Explaination:
   GMP is highly optimized on modern CPUs to operate at very long data types with a single instruction.
   Instruction sets such as SSE and AVX can do 256 bits or even 512 bits data arithmetic operations (Intel 2013)
   
